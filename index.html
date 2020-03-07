@@ -1,0 +1,79 @@
+<html>
+
+<ul>
+  
+</ul>
+
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC5Rk3J5h3rI-8kBceydgUqCOoYOmLpy6w",
+    authDomain: "seng513-a16b6.firebaseapp.com",
+    databaseURL: "https://seng513-a16b6.firebaseio.com",
+    projectId: "seng513-a16b6",
+    storageBucket: "seng513-a16b6.appspot.com",
+    messagingSenderId: "365334058045",
+    appId: "1:365334058045:web:035e7a6cf44bb46a650654",
+    measurementId: "G-6VZBCZR3JD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+  var starCountRef = firebase.database().ref('People');
+  starCountRef.on('value', function(snapshot) {
+   
+    let list = document.getElementsByTagName("ul")[0];
+    list.innerText = "";
+    
+    snapshot.forEach(function(element) {
+
+      
+
+      let ul = document.createElement("ul");
+      let name = document.createElement("li");
+      let email = document.createElement("li");
+      let phone = document.createElement("li");
+
+
+      name.innerText = "Name: "+ element.key;
+
+      email.innerText = "Email: " + element.val().Email;
+      phone.innerText = "Phone: " + element.val().Phone;
+
+
+      list.appendChild(name);
+      ul.appendChild(email);
+      ul.appendChild(phone);
+
+      list.appendChild(ul);
+
+      
+    });
+    
+    // document.getElementsByTagName('p')[0].innerText = JSON.stringify(snapshot.val());
+  });
+
+
+</script>
+
+
+
+</html>
