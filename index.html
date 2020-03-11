@@ -7,12 +7,23 @@
         <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
 
         <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
     </head>
 <body>
-    <p>Firebase database and storage demo</p>
+    <div class="title">
+
+        
+        <img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" class="logo" alt="Firebaselogo">
+
+    </div>
+
+    <div class="description">
+
+        Firebase database and storage demo
+        
+    </div>
+    
     <ul></ul>
     <script>
         // Your web app's Firebase configuration
@@ -64,7 +75,7 @@
                 img.getDownloadURL().then(function(url) {
                     let imgTag = document.createElement("img");
                     imgTag.src = url;
-                    imgTag.width = "200";
+                    imgTag.width = "300";
                     innerList.appendChild(imgTag);
 
                     // Error occurred whilst downloading
@@ -78,3 +89,70 @@
     </script>
 </body>
 </html>
+
+<style>
+
+* {margin: 0; padding: 0;}
+ 
+.title {
+
+    display: inline-block;
+    
+}
+
+.description {
+
+    padding-top: 10px;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+
+}
+ 
+li p {
+
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+body{
+
+    background-color: #039be5;
+}
+
+img{
+    
+    border: 1px solid white;
+    border-radius: 7px;
+}
+    
+ul{
+
+    color:black;
+    line-height:200%;
+    list-style-type: none;
+    width: 300px;        
+} 
+        
+
+li { 
+
+    padding: 10px;
+    background: #fbc02d; 
+    border: 1px solid white;
+    border-radius: 7px;
+}
+
+li:nth-child(odd) { 
+
+    background: #f6820c; 
+}
+
+.logo{
+    border: none;
+}
+
+.logo{
+    width: 50%;
+}
+
+</style>
